@@ -58,14 +58,8 @@ if($_POST){
 
             $sql = "INSERT INTO `USER_INFO`(`U_ID`,`NAME`,`EMAIL`,`PASSWORD`) VALUES (UUID(),'$name','$email','$h_password')";
             if($conn->query($sql)){
-                // $id=$conn->inser_id();
-                // $sql="SELECT U_ID FROM USER_INFO WHERE ID = $id";
-                // $result=$conn->query($sql);
-                // foreach($result as $row){
-                //     $_SESSION['U_ID']=$row["U_ID"];
-                // }
                 $url= "./accountstatus.php";
-                $responce_return=array("status"=>"true", "msg"=>"Sign Up successful ...","url"=>$url);
+                $responce_return=array("status"=>"true", "msg"=>"Sign Up successfull ...","url"=>$url);
                 // echo "true";
             } else {
                 $responce_return=array("status"=>"false", "msg"=>"Record not created !!!");
@@ -82,7 +76,6 @@ if($_POST){
 
 
 echo json_encode($responce_return);
-// echo "1";
 
 
 
